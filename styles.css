@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -15,24 +17,29 @@ body {
 .accordion {
     background-color: #fff;
     border-radius: 10px;
-    padding: 2em;
-    width: 60%;
+    padding: 1em;
+    width: 80%;
 }
 .accordion-title {
-    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
 }
 .question {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgb(56, 33, 33);
+    color: rgb(133, 123, 123);
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 1em 0;
+    font-family: 'Poppins', sans-serif;
 }
 .question::after {
     content: "+";
     position: absolute;
-    right: 20%;
+    right: 10%;
 }
 .answer {
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
     padding-top: 1em;
     line-height: 1.5em;
     height: 0;
@@ -46,4 +53,30 @@ body {
 }
 .active .question::after {
     content: "-";
+}
+
+@media(min-width: 768px) {
+    .accordion {
+        width: 90%;
+        max-width: 850px;
+        padding: 2em;
+        box-shadow: 0 0 10px #000;
+    }
+    .accordion-title {
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 1em 0;
+    }
+    .question {
+        font-size: 1.3rem;
+        padding: 1em 0 .6em 0;
+    }
+    .question::after {
+        right: 28%;
+    }
+    
+    /* active class is added in the JS file */
+    .active .answer {
+        height: 70px;
+    }
 }
