@@ -39,3 +39,11 @@ body {
     overflow: hidden;
     transition: .5s;
 }
+
+/* active class is added in the JS file */
+.active .answer {
+    height: 150px;
+}
+.active .question::after {
+    content: "-";
+}
